@@ -109,9 +109,6 @@ ADD DL,48
 int 21h
 
 
-
-
-
 ; Ending Lines
 mov ah, 4ch
 int 21h
