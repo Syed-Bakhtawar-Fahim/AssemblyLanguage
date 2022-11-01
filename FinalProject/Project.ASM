@@ -1,4 +1,4 @@
-; Program to give choice to User for Addition, Substraction, Multiplication in a 8bit strategy
+; Program to give choice to User for Addition, Substraction, Multiplication in a 8bit register/strategy
 .model small 
 .stack 100h
 .data
@@ -29,10 +29,12 @@ Mov ah, 2
 INT 21h
 ; For LineChange between above two messages End
 
+; Show second message/Variable
 mov dx, offset num2
 mov ah, 9
 int 21h
 
+; Show third message/Variable
 mov dx, offset num3
 mov ah, 9
 int 21h
@@ -51,13 +53,13 @@ mov ah, 1
 int 21h
 mov dl, "1"
 cmp al, dl
-je FCond
+je FCond ; Jump for Addition
 mov bl, "2"
 cmp al, bl
-je SCond
+je SCond ; Jump for Substraction
 mov cl, "3"
 cmp al, cl
-je MCond
+je MCond ; Jump for Multiplication
 
 ; Addition Program
 FCond:
